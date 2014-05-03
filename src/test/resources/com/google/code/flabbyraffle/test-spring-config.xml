@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="lotteryTicketMachine" class="com.google.code.flabbyraffle.LotteryTicketMachine" scope="prototype">
+        <property name="lotteryNumberGenerator" ref="fakeLotteryNumberGenerator"/>
+    </bean>
+
+    <bean id="fakeLotteryNumberGenerator" class="com.google.code.flabbyraffle.FakeLotteryNumberGenerator">
+        <constructor-arg value="21 30 40"/>
+    </bean>
+
+    <bean id="fakePowerballNumberGenerator" class="com.google.code.flabbyraffle.FakeLotteryNumberGenerator">
+        <constructor-arg value="21 32 48 x13"/>
+    </bean>
+
+</beans>
